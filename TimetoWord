@@ -21,8 +21,8 @@ function is used to change given time digit to word
     return mini
     
 
-h = 1
-m = 1
+h = 1 # give the value of hours
+m = 1 # give the value of minutes
 if h == 12:
   h =1;
 elif  m > 30 and h != 12:
