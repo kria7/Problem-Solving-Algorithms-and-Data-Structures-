@@ -1,0 +1,52 @@
+def mTimeInWords(m):
+'''
+function is used to change given time digit to word
+'''
+    mm = str(m); # for length
+    ones =['zero','one','two','three','four','five','six','seven','eight','nine']
+    tens1 =['ten','eleven','tweleve','thirteen','fourteen','fifteen','sixteen','seventeen','eighteen','nineteen']
+    tens2 =["","",'twenty','thirty','fourty','fifty']
+    if len(mm) == 1:
+        mini = ones[m]
+    elif len(mm) == 2:
+        o1 = int(m % 10)
+        t1 = int(m / 10)
+        if t1 ==1:
+          mini = tens1[o1]
+        elif o1 == 0:
+          mini = tens2[t1]
+        else:
+          mini = tens2[t1] + " " + ones[o1]
+    #print("{}".format(mini))
+    return mini
+    
+
+h = 1
+m = 1
+if h == 12:
+  h =1;
+elif  m > 30 and h != 12:
+  h += 1
+if m == 60:
+  m = 0
+hh = mTimeInWords(h)
+mm = mTimeInWords(m)
+#print(hh)
+#print(mm)
+if m == 0:
+  print(f"{hh} o' clock")
+elif m == 15:
+  print(f"quarter past {hh}")
+elif m == 30:
+  print(f"half past {hh}")
+elif m == 45:
+  print(f"quarter to {hh}")
+elif m >= 1 and m < 30:
+  print(f"{mm} mintue past {hh}")
+elif m >= 31 and m < 60:
+  rem_time = 60 - m;
+  print(f"{mTimeInWords(rem_time)} mintue to {hh}")
+
+        
+
+            
