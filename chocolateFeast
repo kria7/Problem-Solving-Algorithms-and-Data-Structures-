@@ -1,0 +1,11 @@
+def chocolateFeast(n, c, m):
+  wrapper = int (n / c)
+  count = wrapper
+  while wrapper >= m:
+    wrapper = wrapper - m
+    count  = count +1
+    wrapper = wrapper + 1
+  print(count)
+
+
+chocolateFeast(47733, 230, 4840)
