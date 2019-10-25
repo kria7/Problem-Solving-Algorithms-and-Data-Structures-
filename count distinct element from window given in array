@@ -1,0 +1,9 @@
+def problem_micro(arr,n ,k):
+  for i in range(0,n):
+      if n >= i+k:
+        se =set()
+        for j in range(i,k+i):
+          se.add(arr[j]) #only store unique value
+        print(len(se))
+    
+problem_1([1,2,1,3,4,2,3],7,4)
